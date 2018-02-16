@@ -6,59 +6,60 @@ $('.document').ready(function() {
   var wins = 0;
   var losses = 0;
   var totalScore = 0;
-  var greenGem = Math.floor(Math.random() * 12) + 1;
-    console.log(greenGem);
-  var multiGem = Math.floor(Math.random() * 12) + 1;
-    console.log(multiGem);
-  var silverGem = Math.floor(Math.random() * 12) + 1;
-    console.log(silverGem);
-  var purpleGem = Math.floor(Math.random() * 12) + 1;
-    console.log(purpleGem);
+  var allGems = ["greenGem", "multiGem", "silverGem", "purpleGem"];
+
+  // for (var i= 0; i < allGems.length; i++) {
+  //   var gemOptions = Math.floor(Math.random() * 12) + 1;
+  //   console.log(gemOptions);
+  // }
 
  //Create reset function
  var reset = function () {
   randomNumber = Math.floor(Math.random() * 120) + 19;
-  greenGem = Math.floor(Math.random() * 12) + 1;
-  multiGem = Math.floor(Math.random() * 12) + 1;
-  silverGem = Math.floor(Math.random() * 12) + 1;
-  purpleGem = Math.floor(Math.random() * 12) + 1;
+  allGems = Math.floor(Math.random() * 12) + 1;
   totalScore = 0;
  }  
-  
-    
-//Show random number
+     
+//Show randon number, wins, and losses to HTML
   $("#random-number").text(randomNumber);
+  $("#wins").text(wins);
+  $("#losses").text(losses);
   
-
-//ADJUST EVERYTHING BELOW!!
-
-// Each imageCrystal will be given a data attribute called data-crystalValue.
-// This data attribute will be set equal to the array value.
-  imageCrystal.attr("data-crystalvalue", numberOptions[i]);
-
-
-// Next we create a for loop to create crystals for every numberOption.
-for (var i = 0; i < numberOptions.length; i++) {
-  // For each iteration, we will create an imageCrystal
-  imageCrystal.addClass("crystal-image");
-  // Each imageCrystal will be given a data attribute called data-crystalValue.
-  // This data attribute will be set equal to the array value.
-  imageCrystal.attr("data-crystalvalue", numberOptions[i]);
+// Next we create a for loop to create gem classes and attributes for each number option.
+  for (var i= 0; i < allGems.length; i++) {
+    var gemOptions = Math.floor(Math.random() * 12) + 1;
+    console.log(gemOptions);
+    // First each gem img will be given the class "gem-image".
+    $("img").addClass("gem-image");
+  // Each img will be given a data attribute called data-gemValue.
+  // This data attribute will be set equal to a random number between 1-12.
+    $(".gem-image").attr("data-gemValue", gemOptions);
+    console.log("This value is" + gemOptions);
   // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
-  $("#crystals").append(imageCrystal);
+    $(".gem-image").append();
 }
 
+//Create on-click event for gem-image class
+  $(".gem-image").on("click", function () {
+    var gemValue = ($(this).attr("data-gemValue"));
+    gemValue = parseInt(gemValue);
+    totalScore += gemValue;
+    $("#total-score").text(totalScore);
+
+    if (totalScore === randomNumber) {
+      wins++;
+      reset();
+    }
+    else if (totalScore >= randomNumber) {
+      losses++;
+      reset();
+    }  
+
+});  
 
 
 
 
 
 
-
-
-
-
-
-
-
-})
+  });
