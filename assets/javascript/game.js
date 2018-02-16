@@ -28,7 +28,25 @@ $('.document').ready(function() {
     
 //Show random number
   $("#random-number").text(randomNumber);
+  
 
+//ADJUST EVERYTHING BELOW!!
+
+// Each imageCrystal will be given a data attribute called data-crystalValue.
+// This data attribute will be set equal to the array value.
+  imageCrystal.attr("data-crystalvalue", numberOptions[i]);
+
+
+// Next we create a for loop to create crystals for every numberOption.
+for (var i = 0; i < numberOptions.length; i++) {
+  // For each iteration, we will create an imageCrystal
+  imageCrystal.addClass("crystal-image");
+  // Each imageCrystal will be given a data attribute called data-crystalValue.
+  // This data attribute will be set equal to the array value.
+  imageCrystal.attr("data-crystalvalue", numberOptions[i]);
+  // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
+  $("#crystals").append(imageCrystal);
+}
 
 
 
