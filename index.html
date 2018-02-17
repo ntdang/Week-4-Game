@@ -18,39 +18,43 @@
   </div>
 
     <h2>Instructions:</h2>
-      <p>You will be given a random number at the start of the game.</p>
-      <p>There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your score, so pay attention!</p>
-      <p>You win the game by matching your total score to the random number, you lose the game if your total score goes above the random number.</p>
-      <p>The value of each crystal is hidden from you until you click on it.</p>
-      <p>Each time the game resets, the values of each crystal will change!!</p>
-      <p>GOOD LUCK!!!!</p>
+      <div class="card">
+        <div class="card-body">
+          <p>You will be given a random number at the start of the game.</p>
+          <p>There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your score, so pay attention!</p>
+          <p>You win the game by matching your total score to the random number, you lose the game if your total score goes above the random number.</p>
+          <p>The value of each crystal is hidden from you until you click on it.</p>
+          <p>Each time the game resets, the values of each crystal will change!!</p>
+          <p>GOOD LUCK!!!!</p>
+        </div>
+      </div>
 
-          <!-- Create html element to hold random number -->
+          <!-- Create html elements for random number, wins, losses, and total score -->
+  <div class="content">   
     <p>Random number:
       <span id="random-number"></span>
     </p>
 
-    <!-- Create html element to hold wins -->
     <p>Wins:
       <span id="wins"></span>
     </p>
 
-    <!-- Create html element to hold losses -->
     <p>Losses:
       <span id="losses"></span>
     </p>
 
-     <!-- Create html element to hold total score -->
      <p>Total score:
         <span id="total-score"></span>
     </p>
+  </div>
 
     <!-- Add images -->
-    <img id="greengem" src="./assets/images/green-gem.png" alt="green-gem">
-    <img id="multigem" src="./assets/images/multi-gem.png" alt="multi-gem">
-    <img id="silvergem" src="./assets/images/silver-gem.png" alt="silver-gem">
-    <img id="purplegem" src="./assets/images/purple-gem.png" alt="purple-gem">
-    
+    <div class="images">
+      <img id="greengem" src="./assets/images/green-gem.png" alt="green-gem">
+      <img id="multigem" src="./assets/images/multi-gem.png" alt="multi-gem">
+      <img id="silvergem" src="./assets/images/silver-gem.png" alt="silver-gem">
+      <img id="purplegem" src="./assets/images/purple-gem.png" alt="purple-gem">
+    </div>
 
 
 

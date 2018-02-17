@@ -39,7 +39,7 @@ $('.document').ready(function() {
   $("#losses").text(losses);
   
   // Next we create a for loop to create gem classes and attributes for each number option.
-  for (var i= 0; i < 5; i++) {
+  for (var i= 0; i < 4; i++) {
     var gemOptions = Math.floor(Math.random() * 12) + 1;
       console.log(gemOptions);
     // First each gem img will be given the class "gem-image".
