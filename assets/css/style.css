@@ -1,8 +1,13 @@
 
-.display-4, h2 {
+.display-4 {
   text-align: center;
   font-family: 'Fondamento', cursive;
   text-decoration: underline;
+}
+
+h2 {
+  font-family: 'Fondamento', cursive;
+  text-decoration: underline; 
 }
 
 .jumbotron {
@@ -21,6 +26,12 @@ body {
 .right-side {
   text-align: center;
   font-size: 22px;
+  margin-left: 200px;
+  color: black;
+}
+
+.card-body {
+  background-color: lightgray;
 }
 
 img {

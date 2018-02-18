@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,61 +10,81 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <title>The Crystals Collector Game</title>
 </head>
+
 <body>
- <div id="crystals-game">
+  <div id="crystals-game">
 
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">The Crystals Collector Game</h1>
-    </div>
-  </div>
-
-    <h2>Instructions:</h2>
-    <br>
-      
+    <div class="jumbotron jumbotron-fluid">
       <div class="container">
-        <div class="row">
-          <div class="col">
-            <p>You will be given a random number at the start of the game.</p>
-            <p>There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your score, so pay attention!</p>
-            <p>Match your total score to the random number and you win! Go over, and you lose!</p>
-            <p>Each time the game resets, the values of each crystal will change!!</p>
-            <p>GOOD LUCK!!!!</p>
-          </div>
-          <div class="col">
-            <div class="right-side">   
-              <p>Random number:
-                <span id="random-number"></span>
-              </p>
+        <h1 class="display-4">The Crystals Collector Game</h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2>Instructions:</h2>
+          <br>
+          <p>You will be given a random number at the start of the game. There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your score, so pay attention!</p>
+          <p>Match your total score to the random number and you win! Go over, and you lose! Each time the game resets, the values of each crystal will change!!</p>
+          <p>GOOD LUCK!!!!</p>
+        </div>
+        <div class="col">
+          <div class="right-side">
+            <br>
+            <br>
+            <div class="card" style="width: 15rem;">
+                <div class="card-body">
+                    <p>Random number:
+                        <span id="random-number"></span>
+                      </p>
           
-              <p>Wins:
-                <span id="wins"></span>
-              </p>
+                      <p>Wins:
+                        <span id="wins"></span>
+                      </p>
           
-              <p>Losses:
-                <span id="losses"></span>
-              </p>
+                      <p>Losses:
+                        <span id="losses"></span>
+                      </p>
           
-               <p>Total score:
-                  <span id="total-score"></span>
-              </p>
-            </div>
+                      <p>Total score:
+                        <span id="total-score"></span>
+                      </p> 
+                </div>
+              </div>
+            <!-- <p>Random number:
+              <span id="random-number"></span>
+            </p>
+
+            <p>Wins:
+              <span id="wins"></span>
+            </p>
+
+            <p>Losses:
+              <span id="losses"></span>
+            </p>
+
+            <p>Total score:
+              <span id="total-score"></span>
+            </p> -->
           </div>
         </div>
-        
-    <!-- Add images -->
-    <div class="images">
-      <img id="greengem" src="./assets/images/green-gem.png" alt="green-gem">
-      <img id="multigem" src="./assets/images/multi-gem.png" alt="multi-gem">
-      <img id="silvergem" src="./assets/images/silver-gem.png" alt="silver-gem">
-      <img id="purplegem" src="./assets/images/purple-gem.png" alt="purple-gem">
+      </div>
+
+      <!-- Add images -->
+      <div class="images">
+        <img id="greengem" src="./assets/images/green-gem.png" alt="green-gem">
+        <img id="multigem" src="./assets/images/multi-gem.png" alt="multi-gem">
+        <img id="silvergem" src="./assets/images/silver-gem.png" alt="silver-gem">
+        <img id="purplegem" src="./assets/images/purple-gem.png" alt="purple-gem">
+      </div>
+
+
+
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="./assets/javascript/game.js"></script>
+
     </div>
-
-
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./assets/javascript/game.js"></script>
-
- </div>
 </body>
+
 </html>
