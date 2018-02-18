@@ -23,6 +23,10 @@ body {
   background-image: url("../images/pink dust.png");
 }
 
+#left {
+  margin-left: 45px;
+}
+
 .right-side {
   text-align: center;
   font-size: 22px;
