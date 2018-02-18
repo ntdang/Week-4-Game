@@ -24,9 +24,22 @@ $('.document').ready(function () {
     console.log("New random number is " + randomNumber);
     totalScore = 0;
     $("#total-score").text(totalScore);
-    // allGems = Math.floor(Math.random() * 12) + 1;
-    //   console.log("The new values are " + allGems);
+    var greenGem = Math.floor(Math.random() * 12) + 1;
+    var multiGem = Math.floor(Math.random() * 12) + 1;
+    var silverGem = Math.floor(Math.random() * 12) + 1;
+    var purpleGem = Math.floor(Math.random() * 12) + 1;
+    var allGems = [greenGem, multiGem, silverGem, purpleGem];
+
+    for (i = 0; i < allGems.length; i++) {
+      console.log("The new values are " + allGems[i]);
+      var gemOptions_js = document.getElementsByTagName("img")[i];
+      var gemOptions = $(gemOptions_js);
+      gemOptions.addClass("gem-image");
+      gemOptions.attr("data-gemValue", allGems[i]);
+      gemOptions.text(allGems[i]);
     }
+    
+  }
 
   // Next we create a for loop to create gem classes and attributes for each number option.
   for (i = 0; i < allGems.length; i++) {
