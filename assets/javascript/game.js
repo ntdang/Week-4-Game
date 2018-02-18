@@ -1,8 +1,8 @@
-$('.document').ready(function() {
+$('.document').ready(function () {
 
   //Create variables for random number, wins, losses, total score, crystal values
   var randomNumber = Math.floor(Math.random() * 120) + 19;
-    console.log(randomNumber);
+  console.log(randomNumber);
   var wins = 0;
   var losses = 0;
   var totalScore = 0;
@@ -12,32 +12,27 @@ $('.document').ready(function() {
   var purpleGem = Math.floor(Math.random() * 12) + 1;
   var allGems = [greenGem, multiGem, silverGem, purpleGem];
 
-  // for (var i= 0; i < allGems.length; i++) {
-  //   var gemOptions = Math.floor(Math.random() * 12) + 1;
-  //   console.log(gemOptions);
-  // }
-
- //Create reset function
- var reset = function () {
-  randomNumber = Math.floor(Math.random() * 120) + 19;
-    $("#random-number").text(randomNumber);
-      console.log("New random number is " + randomNumber);
-  allGems = Math.floor(Math.random() * 12) + 1;
-  totalScore = 0;
-  $("#total-score").text(totalScore);
-
- };  
-     
   //Show randon number, wins, and losses to HTML
   $("#random-number").text(randomNumber);
   $("#wins").text(wins);
   $("#losses").text(losses);
-  
+
+  //Create reset function
+  var reset = function () {
+    randomNumber = Math.floor(Math.random() * 120) + 19;
+    $("#random-number").text(randomNumber);
+    console.log("New random number is " + randomNumber);
+    totalScore = 0;
+    $("#total-score").text(totalScore);
+    // allGems = Math.floor(Math.random() * 12) + 1;
+    //   console.log("The new values are " + allGems);
+    }
+
   // Next we create a for loop to create gem classes and attributes for each number option.
-  for (i= 0; i < allGems.length; i++) {
+  for (i = 0; i < allGems.length; i++) {
     console.log(allGems[i]);
     var gemOptions_js = document.getElementsByTagName("img")[i];
-      var gemOptions = $(gemOptions_js);
+    var gemOptions = $(gemOptions_js);
 
     // First each gem img will be given the class "gem-image".
     gemOptions.addClass("gem-image");
@@ -48,33 +43,27 @@ $('.document').ready(function() {
     gemOptions.text(allGems[i]);
   }
 
-//Create on-click event for gem-image class
+  //Create on-click event for gem-image class
   $(".gem-image").on("click", function () {
     var gemValue = ($(this).attr("data-gemValue"));
     $(gemValue).text($(this).attr("data-gemValue"));
-    console.log(gemValue);
-      gemValue = parseInt(gemValue);
-      totalScore += gemValue;
-      $("#total-score").text(totalScore);
-    
+    console.log("The current value of this gem is " + gemValue);
+
+    gemValue = parseInt(gemValue);
+    totalScore += gemValue;
+    $("#total-score").text(totalScore);
+
 
     if (totalScore === randomNumber) {
       wins++;
-        $("#wins").text(wins);
-          reset();
-    }
-    else if (totalScore >= randomNumber) {
+      $("#wins").text(wins);
+      reset();
+
+    } else if (totalScore >= randomNumber) {
       losses++;
       $("#losses").text(losses);
-        reset();
+      reset();
     }
-  });    
+  });
 
-});  
-
-
-
-
-
-
-
+});
