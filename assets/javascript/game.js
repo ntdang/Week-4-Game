@@ -33,6 +33,7 @@ $('.document').ready(function () {
     // The each() method specifies a function to run for each matched element
     $("img").each(function (i) {
       $(this).attr("data-gemValue", allGems[i]).addClass("gem-image").text(allGems[i]);
+      console.log("The new values are " + allGems[i]);
     });
   }
 
