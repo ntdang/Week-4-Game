@@ -30,31 +30,17 @@ $('.document').ready(function () {
     var purpleGem = Math.floor(Math.random() * 12) + 1;
     var allGems = [greenGem, multiGem, silverGem, purpleGem];
 
-    for (i = 0; i < allGems.length; i++) {
-      console.log("The new values are " + allGems[i]);
-      var gemOptions_js = document.getElementsByTagName("img")[i];
-      var gemOptions = $(gemOptions_js);
-      gemOptions.addClass("gem-image");
-      gemOptions.attr("data-gemValue", allGems[i]);
-      gemOptions.text(allGems[i]);
-    }
-    
+    // The each() method specifies a function to run for each matched element
+    $("img").each(function (i) {
+      $(this).attr("data-gemValue", allGems[i]).addClass("gem-image").text(allGems[i]);
+    });
   }
 
-  // Next we create a for loop to create gem classes and attributes for each number option.
-  for (i = 0; i < allGems.length; i++) {
-    console.log(allGems[i]);
-    var gemOptions_js = document.getElementsByTagName("img")[i];
-    var gemOptions = $(gemOptions_js);
-
-    // First each gem img will be given the class "gem-image".
-    gemOptions.addClass("gem-image");
-    // Each img will be given a data attribute called data-gemValue.
-    // This data attribute will be set equal to a random number between 1-12.
-    gemOptions.attr("data-gemValue", allGems[i]);
-    // Lastly, each crystal image (with all it classes and attributes) will get added to the page.
-    gemOptions.text(allGems[i]);
-  }
+  // Using the .each method to loop over each image to assign value into each gem  
+  $("img").each(function (i) {
+    //this refers to the image at current iteration
+    $(this).attr("data-gemValue", allGems[i]).addClass("gem-image").text(allGems[i]);
+  });
 
   //Create on-click event for gem-image class
   $(".gem-image").on("click", function () {
@@ -80,3 +66,11 @@ $('.document').ready(function () {
   });
 
 });
+
+ // for (i = 0; i < allGems.length; i++) {
+    //   console.log("The new values are " + allGems[i]);
+    //   var gemOptions_js = document.getElementsByTagName("img")[i];
+    //   var gemOptions = $(gemOptions_js);
+    //   gemOptions.addClass("gem-image");
+    //   gemOptions.attr("data-gemValue", allGems[i]);
+    //   gemOptions.text(allGems[i]);
